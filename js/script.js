@@ -11,7 +11,7 @@ const $box9 = $('#nine');
 
 //buttons choice
 const $buttonO = $('#O')
-const $buttonX = $('#X') 
+const $buttonX = $('#X')
 
 //active player
 let activePlayer = "X"; //should be able to select from the buttons choice
@@ -24,20 +24,29 @@ const switchPlayer = function () {
 }
 
 
-//click div
+//click div 
 $('.box').click(function () {
-    if (activePlayer === "X") {
-        $(this).addClass('player1')
-        $(this).text(activePlayer)
-        switchPlayer() 
+    if ($(this).text() !== "X" && $(this).text() !== "O") //disable from clicking twice
+        if (activePlayer === "X") {
+            $(this).addClass('player1')
+            $(this).text(activePlayer)
+            switchPlayer()
 
-    } else if (activePlayer === "O"){
+        } else if (activePlayer === "O") {
 
-        $(this).addClass('player2')
-        $(this).text(activePlayer)
-        switchPlayer()
-    }
-})
+            $(this).addClass('player2')
+            $(this).text(activePlayer)
+            switchPlayer()
+        }
+
+}
+)
+
+//winning logic
+
+
+
+
 
 
 
