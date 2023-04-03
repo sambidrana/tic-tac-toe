@@ -1,22 +1,61 @@
-.container {
+body {
     max-width: 960px;
-    margin: 0 auto;
+    margin: 20px auto;
+
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+
+#button-container > button {
+ padding: 10px 20px;
+ margin: 10px;
+ border: 5px solid white;
+ border-radius: 15px;
+ box-shadow: 0 0 8px 1px black;
+}
+
+#button-container > button:hover {
+ box-shadow: 0 0 12px 2px rgb(42, 24, 139);
+ cursor: pointer;
+ transition: 0.2s;
 
 }
 
 main {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-around; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    background-color: #d2dae1;
+    padding: 10px;
 }
 
 .box {
-    flex: 0 0 32%;
-    width: 200px;
-    height: 200px;
-    text-align: center;
+    width: 250px;
+    height: 150px;
     background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
     font-size: 30px;
+    justify-self: center;
     border: 1px solid black;
-    margin: 1px;
+  }
+    /* flex: 0 0 32%;
+    margin: 1px; */
+
+
+#player1 {
+    color: red;
+}
+.player1 {
+    color: red;
+}
+
+.player2 {
+    color: blue;
 }
