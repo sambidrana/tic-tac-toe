@@ -1,3 +1,4 @@
+
 //Selecting the boxes
 const $box1 = $('#one');
 const $box2 = $('#two');
@@ -13,46 +14,50 @@ const $box9 = $('#nine');
 const $buttonO = $('#O')
 const $buttonX = $('#X')
 
+///////////////////////////////////////////////////////
 
 //active player
 let activePlayer ;
-
+let isPlaying = true;
 //switch player
 const switchPlayer = function () {
-
     activePlayer = activePlayer === "X" ? "O" : "X";
-
 }
 
-
 //click div.box
-$('.box').on('click', function () {
+const $userSelect = function () {
 
+    $('.box').on('click', function () {
+        
         if (activePlayer === "X") {
             $(this).addClass('player1');
             $(this).text(activePlayer);
             $(this).off('click');
-
+            
             switchPlayer();
-
+            
             checkWinner() //run the winner function if the winning conditions returns true
             displayWinner();
             draw()
-
+            console.log(activePlayer)
+            
         } else if (activePlayer === "O") {
             $(this).addClass('player2');
             $(this).text(activePlayer);
             $(this).off('click');
-
+            
             switchPlayer();
-
+            
             checkWinner()
             displayWinner()
             draw()
-
+            console.log(activePlayer)
+            
         }
+    }
+    )
 }
-)
+$userSelect()
 //winning logic - 8 possible winning combination
 // [123], [456], [789] - Horizontally
 // [147], [258], [369] - Vertically
@@ -221,11 +226,6 @@ if (!activePlayer) {
 
 
 
-// when user selects one of the two options
-//the other option should hide 
-// the the user active player will be the chosen button
-
-
 //Reset button
 $('#reset-button').on('click', function () {
 
@@ -234,9 +234,11 @@ $('#reset-button').on('click', function () {
     $('.box').text('')
     $('.box').removeClass('player1')
     $('.box').removeClass('player2')
-    checkWinner()
-    displayWinner()
-    draw()
+    // $('.box').on('click')
+    $userSelect()
+    // checkWinner()
+    // displayWinner()
+    // draw()
   
     console.log(activePlayer, winner)
 }
@@ -244,3 +246,62 @@ $('#reset-button').on('click', function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //Selecting the boxes
+// const $box1 = $('#one');
+// const $box2 = $('#two');
+// const $box3 = $('#three');
+// const $box4 = $('#four');
+// const $box5 = $('#five');
+// const $box6 = $('#six');
+// const $box7 = $('#seven');
+// const $box8 = $('#eight');
+// const $box9 = $('#nine');
+
+// let moves  = [
+//     ['', '', ''], 
+//     ['', '', ''], 
+//     ['', '', '']
+// ]
+// let activePlayer = "X"
+
+// //switch player
+// const switchPlayer = function () {
+
+//     activePlayer = activePlayer === "X" ? "O" : "X";
+
+// }
+
+// //push X or O into array of arrays

@@ -4,58 +4,142 @@ body {
 
 }
 
+/* header */
+.header-hide {
+    display: none;
+} 
+#header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 250px;
+}
+
+
+#header-container > h1 {
+    color: red;
+    font-size: 62px;
+}
+
+#header-container > button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: 5px solid rgb(109, 104, 104);
+    border-radius: 15px;
+    box-shadow: 0 0 8px 1px black;
+}
+#header-container > button:active {
+    color: rgb(231, 162, 162);
+    /* background-color: #3e8e41; */
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#header-container > button:hover {
+    /* box-shadow: 0 0 12px 2px rgb(42, 24, 139); */
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////////// */
+
+/* button container */
+#button-hide {
+    display: none;
+}
+
 #button-container {
     display: flex;
     justify-content: center;
-}
-
-#button-container > button {
- padding: 10px 20px;
- margin: 10px;
- border: 5px solid white;
- border-radius: 15px;
- box-shadow: 0 0 8px 1px black;
-}
-
-#button-container > button:hover {
- box-shadow: 0 0 12px 2px rgb(42, 24, 139);
- cursor: pointer;
- transition: 0.2s;
+    align-items: center;
+    margin-top: 150px;
 
 }
 
-main {
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; */
+#button-container>button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: 5px solid rgb(109, 104, 104);
+    border-radius: 15px;
+    box-shadow: 0 0 8px 1px black;
+    width: 100px;
+}
+
+#button-container > button:active {
+    color: rgb(231, 162, 162);
+    /* background-color: #3e8e41; */
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#button-container>button:hover {
+    /* box-shadow: 0 0 12px 2px rgb(42, 24, 139); */
+    cursor: pointer;
+    transition: 0.2s;
+
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////////// */
+
+
+/* main container */
+.main-hide {
+    display: none;
+}
+
+#main-container {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 10px;
     background-color: #d2dae1;
     padding: 10px;
+    width: 470px;
+    margin: 0 auto;
 }
 
 .box {
-    width: 250px;
-    height: 150px;
+    width: 140px;
+    height: 70px;
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
     justify-self: center;
     border: 1px solid black;
-  }
-    /* flex: 0 0 32%;
-    margin: 1px; */
-
-
-#player1 {
-    color: red;
 }
+
+
+
+
+
+#reset-button-container{
+    color: red;
+
+}
+.reset-hide {
+    display: none;
+}
+
+
+
+
+
+
+
+/* /////////////////////////////////////////////////////////////////////////////// */
+
+
 .player1 {
     color: red;
 }
 
 .player2 {
     color: blue;
+}
+
+.computer {
+    color: yellow;
 }
