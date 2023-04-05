@@ -184,7 +184,7 @@ const displayWinOrDraw = function () {
 
 
 //Start game page effect
-$('#header-button').on('click', function (e) {
+$('#header-button').on('click', function () {
 
     $('#header-container').addClass("header-hide");
     $('#header-container').removeAttr('id');
@@ -205,8 +205,6 @@ if (!activePlayer) {
         $('.main-hide').removeClass()
         // $('.reset-hide').attr('id', 'reset-button-container')
         // $('.reset-hide').removeClass()
-
-
     })
 }
 if (!activePlayer) {
@@ -225,7 +223,7 @@ if (!activePlayer) {
 }
 
 
-//Reset button
+//Play again button
 $('#reset-button').on('click', function () {
 
     activePlayer = "";
@@ -259,8 +257,8 @@ const showPlayAgain = function () {
         $buttonO.addClass('main-visibility')
 
         $('<h2>', {
-            // id: "randomId",
-            class: "randomClass",
+            id: "randomId",
+            class: "animate__bounce", //randomClass
             text: `${displayResult.text()}`
         }).prependTo('body');
 
@@ -278,66 +276,3 @@ const showPlayAgain = function () {
     return
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //Selecting the boxes
-// const $box1 = $('#one');
-// const $box2 = $('#two');
-// const $box3 = $('#three');
-// const $box4 = $('#four');
-// const $box5 = $('#five');
-// const $box6 = $('#six');
-// const $box7 = $('#seven');
-// const $box8 = $('#eight');
-// const $box9 = $('#nine');
-
-// let moves  = [
-//     ['', '', ''], 
-//     ['', '', ''], 
-//     ['', '', '']
-// ]
-// let activePlayer = "X"
-
-// //switch player
-// const switchPlayer = function () {
-
-//     activePlayer = activePlayer === "X" ? "O" : "X";
-
-// }
-
-// //push X or O into array of arrays

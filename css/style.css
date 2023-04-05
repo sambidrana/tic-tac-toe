@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Pixels&display=swap');
+
 body {
     max-width: 960px;
     margin: 20px auto;
@@ -49,7 +50,7 @@ body {
     /* box-shadow: 0 0 12px 2px rgb(42, 24, 139); */
     cursor: pointer;
     transition: 0.2s;
-    font-size: 20px;
+    /* font-size: 20px; */
     transition: 0.2s;
 }
 
@@ -67,7 +68,7 @@ body {
     align-items: center;
     margin-top: 150px;
     margin-bottom: 50px;
-    margin-right: 50px;    
+    margin-right: 50px;
 
 }
 
@@ -121,14 +122,8 @@ body {
     text-align: center;
     padding: 20px 0;
     /* font-size: 30px; */
-    /* justify-self: center; */
-    /* border: 1px solid black; */
-
-
-
-
-
-
+/* justify-self: center; */
+/* border: 1px solid black; */
 
 
 #main-container {
@@ -138,6 +133,7 @@ body {
     margin: 0 auto;
     flex-wrap: wrap;
 }
+
 .box {
     width: 150px;
     height: 150px;
@@ -145,11 +141,22 @@ body {
     /* border: 1px solid black; */
 }
 
-#one, #two, #four, #five, #seven, #eight {
+#one,
+#two,
+#four,
+#five,
+#seven,
+#eight {
     border-right: 5px dashed white;
-    
+
 }
-#one, #two, #three, #four, #five, #six {
+
+#one,
+#two,
+#three,
+#four,
+#five,
+#six {
     border-bottom: 5px dashed white;
 }
 
@@ -189,6 +196,7 @@ body {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+
 #reset-button:hover {
     /* box-shadow: 0 0 12px 2px rgb(42, 24, 139); */
     cursor: pointer;
@@ -209,16 +217,25 @@ body {
 
 /* /////////////////////////////////////////////////////////////////////////////// */
 
-.randomClass {
+/* .randomClass {
+    display: flex;
+    justify-content: center;
     color: rgb(212, 42, 20);
     font-size: 34px;
-    margin: 0 auto;
+    margin-top: 40px;
     text-align: center;
 
+} */
 
+#randomId {
+    display: flex;
+    justify-content: center;
+    color: rgb(212, 42, 20);
+    font-size: 34px;
+    margin-top: 40px;
+    text-align: center;
+    transition: 2s;
 }
-
-/* #randomId {} */
 
 
 .player1 {
