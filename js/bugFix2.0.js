@@ -17,8 +17,9 @@ const $buttonX = $('#X')
 ///////////////////////////////////////////////////////
 
 //active player
-let activePlayer ;
-let isPlaying = true;
+let activePlayer;
+// let isPlaying = true;
+
 //switch player
 const switchPlayer = function () {
     activePlayer = activePlayer === "X" ? "O" : "X";
@@ -27,31 +28,33 @@ const switchPlayer = function () {
 //click div.box
 const $userSelect = function () {
 
+
     $('.box').on('click', function () {
         
+        if ($(this).text() === "X" ||  $(this).text() === "O") {
+
+            return;
+        }
+
         if (activePlayer === "X") {
             $(this).addClass('player1');
             $(this).text(activePlayer);
-            $(this).off('click');
-            
+    
             switchPlayer();
-            
-            checkWinner() //run the winner function if the winning conditions returns true
+            checkWinner();
             displayWinner();
-            draw()
+            draw();
             console.log(activePlayer)
             
-        } else if (activePlayer === "O") {
+        }else if (activePlayer === "O") {
             $(this).addClass('player2');
             $(this).text(activePlayer);
-            $(this).off('click');
-            
+        
             switchPlayer();
-            
-            checkWinner()
-            displayWinner()
-            draw()
-            console.log(activePlayer)
+            checkWinner();
+            displayWinner();
+            draw();
+            console.log(activePlayer);
             
         }
     }
@@ -161,9 +164,10 @@ const checkWinner = function () {
 const displayWinner = function () {
 
     if (winner) {
-        $('.box').off('click');
+        // $('.box').off('click');
         $('#display-winner').text(`The winner is ${winner}`)
-        return winner
+        activePlayer = "";
+        // return winner
 
     } 
 }
@@ -174,7 +178,7 @@ const draw = function () {
     if(boxFilled.split('').length === 9 && !winner) {
         
         console.log(boxFilled)
-        $('.box').off('click');
+        // $('.box').off('click');
         $('#display-winner').text(`Its a draw`)
 
     }
@@ -229,17 +233,12 @@ if (!activePlayer) {
 //Reset button
 $('#reset-button').on('click', function () {
 
-    let activePlayer;
-    let winner; 
+    activePlayer = "";
+    winner = ""; 
     $('.box').text('')
     $('.box').removeClass('player1')
     $('.box').removeClass('player2')
-    // $('.box').on('click')
-    $userSelect()
-    // checkWinner()
-    // displayWinner()
-    // draw()
-  
+    $('#display-winner').text('')
     console.log(activePlayer, winner)
 }
 )
