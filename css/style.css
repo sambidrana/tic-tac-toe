@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Pixels&display=swap');
 body {
     max-width: 960px;
     margin: 20px auto;
+    background-color: antiquewhite;
+    font-family: 'Rubik Pixels', cursive, sans-serif;
+
 
 }
 
 /* header */
 .header-hide {
     display: none;
-} 
+}
+
 #header-container {
     display: flex;
     flex-direction: column;
@@ -17,28 +22,34 @@ body {
 }
 
 
-#header-container > h1 {
+#header-container>h1 {
     color: red;
-    font-size: 62px;
+    font-size: 82px;
+    border-bottom: 5px solid white;
+    border-radius: 20px;
+    padding: 5px;
 }
 
-#header-container > button {
+#header-container>button {
     padding: 10px 20px;
     margin: 10px;
     border: 5px solid rgb(109, 104, 104);
     border-radius: 15px;
     box-shadow: 0 0 8px 1px black;
 }
-#header-container > button:active {
+
+#header-container>button:active {
     color: rgb(231, 162, 162);
     /* background-color: #3e8e41; */
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
-#header-container > button:hover {
+#header-container>button:hover {
     /* box-shadow: 0 0 12px 2px rgb(42, 24, 139); */
     cursor: pointer;
+    transition: 0.2s;
+    font-size: 20px;
     transition: 0.2s;
 }
 
@@ -55,6 +66,8 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 150px;
+    margin-bottom: 50px;
+    margin-right: 50px;    
 
 }
 
@@ -67,7 +80,7 @@ body {
     width: 100px;
 }
 
-#button-container > button:active {
+#button-container>button:active {
     color: rgb(231, 162, 162);
     /* background-color: #3e8e41; */
     box-shadow: 0 5px #666;
@@ -77,48 +90,113 @@ body {
 #button-container>button:hover {
     /* box-shadow: 0 0 12px 2px rgb(42, 24, 139); */
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.1s;
+    font-size: 15px;
+    /* padding: 15px; */
 
 }
 
 
 /* /////////////////////////////////////////////////////////////////////////////// */
 
-
 /* main container */
 .main-hide {
     display: none;
 }
 
-#main-container {
+/* #main-container {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 10px;
-    background-color: #d2dae1;
+    background-color: #81b0d9;
     padding: 10px;
-    width: 470px;
+    width: 441px;
+    height: 400px;
     margin: 0 auto;
-}
-
+} 
 .box {
     width: 140px;
     height: 70px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(161, 151, 151, 0.8);
     text-align: center;
     padding: 20px 0;
-    font-size: 30px;
-    justify-self: center;
-    border: 1px solid black;
+    /* font-size: 30px; */
+    /* justify-self: center; */
+    /* border: 1px solid black; */
+
+
+
+
+
+
+
+
+#main-container {
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.box {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    /* border: 1px solid black; */
+}
+
+#one, #two, #four, #five, #seven, #eight {
+    border-right: 5px dashed white;
+    
+}
+#one, #two, #three, #four, #five, #six {
+    border-bottom: 5px dashed white;
+}
+
+
+.main-visibility {
+    opacity: 0.12;
 }
 
 
 
 
 
-#reset-button-container{
+#reset-button-container {
     color: red;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
 
 }
+
+#reset-button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: 5px solid rgb(109, 104, 104);
+    border-radius: 15px;
+    box-shadow: 0 0 8px 1px black;
+    width: 120px;
+
+}
+
+#reset-button:active {
+    color: rgb(231, 162, 162);
+    /* background-color: #3e8e41; */
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+#reset-button:hover {
+    /* box-shadow: 0 0 12px 2px rgb(42, 24, 139); */
+    cursor: pointer;
+    transition: 0.1s;
+
+}
+
+
 .reset-hide {
     display: none;
 }
@@ -131,15 +209,40 @@ body {
 
 /* /////////////////////////////////////////////////////////////////////////////// */
 
+.randomClass {
+    color: rgb(212, 42, 20);
+    font-size: 34px;
+    margin: 0 auto;
+    text-align: center;
+
+
+}
+
+/* #randomId {} */
+
 
 .player1 {
-    color: red;
+    color: antiquewhite;
+    background-image: url(../img/pngwing.com.png);
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: 20px;
 }
 
 .player2 {
-    color: blue;
+    /* color: blue; */
+    color: antiquewhite;
+
+    background-image: url(../img/O-Jolle_insigna\ \(1\).png);
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: 20px;
 }
 
 .computer {
     color: yellow;
+}
+
+#display-winner {
+    display: none;
 }

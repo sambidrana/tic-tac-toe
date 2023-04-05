@@ -26,12 +26,11 @@ const switchPlayer = function () {
 }
 
 //click div.box
-const $userSelect = function () {
-
+const userSelect = function () {
 
     $('.box').on('click', function () {
-        
-        if ($(this).text() === "X" ||  $(this).text() === "O") {
+
+        if ($(this).text() === "X" || $(this).text() === "O") {
 
             return;
         }
@@ -39,28 +38,28 @@ const $userSelect = function () {
         if (activePlayer === "X") {
             $(this).addClass('player1');
             $(this).text(activePlayer);
-    
+
             switchPlayer();
             checkWinner();
-            displayWinner();
-            draw();
-            console.log(activePlayer)
-            
-        }else if (activePlayer === "O") {
+            displayWinOrDraw();
+            showPlayAgain()
+
+
+        } else if (activePlayer === "O") {
             $(this).addClass('player2');
             $(this).text(activePlayer);
-        
+
             switchPlayer();
             checkWinner();
-            displayWinner();
-            draw();
-            console.log(activePlayer);
-            
+            displayWinOrDraw();
+            showPlayAgain()
+
+
         }
     }
     )
 }
-$userSelect()
+userSelect()
 //winning logic - 8 possible winning combination
 // [123], [456], [789] - Horizontally
 // [147], [258], [369] - Vertically
@@ -73,175 +72,213 @@ const checkWinner = function () {
     // X conditions
     if ($box1.text() === "X" && $box2.text() === "X" && $box3.text() === "X") { //Horizontal Win
 
-        console.log(winner = "X")
-        // return winner = "X";
+        // console.log(winner = "X")
+        return winner = "X";
 
     } else if ($box4.text() === "X" && $box5.text() === "X" && $box6.text() === "X") {
 
-        console.log(winner = "X")
-        // return winner = "X";
+        // console.log(winner = "X")
+        return winner = "X";
 
     } else if ($box7.text() === "X" && $box8.text() === "X" && $box9.text() === "X") {
 
-        console.log(winner = "X")
-        // return winner = "X";
+        // console.log(winner = "X")
+        return winner = "X";
 
     } else if ($box1.text() === "X" && $box4.text() === "X" && $box7.text() === "X") { //Vertical Win
 
-        console.log(winner = "X")
-        // return winner = "X";
+        // console.log(winner = "X")
+        return winner = "X";
 
     } else if ($box2.text() === "X" && $box5.text() === "X" && $box8.text() === "X") {
 
-        console.log(winner = "X")
-        // return winner = "X";
+        // console.log(winner = "X")
+        return winner = "X";
 
     } else if ($box3.text() === "X" && $box6.text() === "X" && $box9.text() === "X") {
 
-        console.log(winner = "X")
-        // return winner = "X";
+        // console.log(winner = "X")
+        return winner = "X";
 
     } else if ($box1.text() === "X" && $box5.text() === "X" && $box9.text() === "X") { //Diagonal Win
 
-        console.log(winner = "X")
-        // return winner = "X";
+        // console.log(winner = "X")
+        return winner = "X";
 
     } else if ($box3.text() === "X" && $box5.text() === "X" && $box7.text() === "X") {
 
-        console.log(winner = "X")
-        // return winner = "X";
+        // console.log(winner = "X")
+        return winner = "X";
 
-    } 
+    }
 
     // O conditions
 
     if ($box1.text() === "O" && $box2.text() === "O" && $box3.text() === "O") { //Horizontal Win
 
-        console.log(winner = "O")
-        // return winner = "O";
+        // console.log(winner = "O")
+        return winner = "O";
 
     } else if ($box4.text() === "O" && $box5.text() === "O" && $box6.text() === "O") {
 
-        console.log(winner = "O")
-        // return winner = "O";
+        // console.log(winner = "O")
+        return winner = "O";
 
     } else if ($box7.text() === "O" && $box8.text() === "O" && $box9.text() === "O") {
 
-        console.log(winner = "O")
-        // return winner = "O";
+        // console.log(winner = "O")
+        return winner = "O";
 
     } else if ($box1.text() === "O" && $box4.text() === "O" && $box7.text() === "O") { //Vertical Win
 
-        console.log(winner = "O")
-        // return winner = "O";
+        // console.log(winner = "O")
+        return winner = "O";
 
     } else if ($box2.text() === "O" && $box5.text() === "O" && $box8.text() === "O") {
 
-        console.log(winner = "O")
-        // return winner = "O";
+        // console.log(winner = "O")
+        return winner = "O";
 
     } else if ($box3.text() === "O" && $box6.text() === "O" && $box9.text() === "O") {
 
-        console.log(winner = "O")
-        // return winner = "O";
+        // console.log(winner = "O")
+        return winner = "O";
 
     } else if ($box1.text() === "O" && $box5.text() === "O" && $box9.text() === "O") { //Diagonal Win
 
-        console.log(winner = "O")
-        // return winner = "O";
+        // console.log(winner = "O")
+        return winner = "O";
 
     } else if ($box3.text() === "O" && $box5.text() === "O" && $box7.text() === "O") {
 
-        console.log(winner = "O")
-        // return winner = "O";
+        // console.log(winner = "O")
+        return winner = "O";
 
-    }  
-    return winner 
+    }
+    return winner
 
 }
 
 //Display winner function
-const displayWinner = function () {
+let displayResult;
+const displayWinOrDraw = function () {
 
     if (winner) {
-        // $('.box').off('click');
-        $('#display-winner').text(`The winner is ${winner}`)
         activePlayer = "";
-        // return winner
-
-    } 
-}
-// Check draw function - can merge it with displayWinner 
-const draw = function () {
-    const boxFilled = $('.box').text()
-
-    if(boxFilled.split('').length === 9 && !winner) {
-        
-        console.log(boxFilled)
-        // $('.box').off('click');
-        $('#display-winner').text(`Its a draw`)
+        displayResult = $('#display-winner').text(`The winner is ${winner}`)
 
     }
-}
+    //draw
+    const boxFilled = $('.box').text()
 
+    if (boxFilled.split('').length === 9 && !winner) {
+        winner = `DRAW!`
+        displayResult = $('#display-winner').text(`No win this time, it's a ${winner}`)
+
+        // console.log(boxFilled)
+    }
+
+    return
+
+}
 
 
 //Start game page effect
-$('#header-button').on('click', function(e) {
+$('#header-button').on('click', function (e) {
 
     $('#header-container').addClass("header-hide");
     $('#header-container').removeAttr('id');
     $('#button-hide').attr('id', 'button-container')
     $('#button-hide').removeAttr('id');
 
-    // e.stopPropagation();
 })
 
 
 // O or X selection after start game page
-if ( !activePlayer) {
-    
+if (!activePlayer) {
+
     $buttonX.on('click', function () {
         activePlayer = $buttonX.text();
         $buttonO.hide()
-        $('#button-text-display').text(`You chose - `)
+        $('#button-text-display').text(`You selected -`)
         $('.main-hide').attr('id', 'main-container')
         $('.main-hide').removeClass()
-        $('.reset-hide').attr('id','reset-button-container')
-        $('.reset-hide').removeClass()
+        // $('.reset-hide').attr('id', 'reset-button-container')
+        // $('.reset-hide').removeClass()
 
-    
+
     })
-} 
+}
 if (!activePlayer) {
 
-    $buttonO.on('click', function (){
+    $buttonO.on('click', function () {
         activePlayer = $buttonO.text()
         $buttonX.hide()
         $('#button-text-display').text(`You chose - `)
         $('.main-hide').attr('id', 'main-container')
         $('.main-hide').removeClass()
-        $('.reset-hide').attr('id','reset-button-container')
+        $('.reset-hide').attr('id', 'reset-button-container')
         $('.reset-hide').removeClass()
 
     })
 
 }
-
 
 
 //Reset button
 $('#reset-button').on('click', function () {
 
     activePlayer = "";
-    winner = ""; 
+    winner = "";
     $('.box').text('')
     $('.box').removeClass('player1')
     $('.box').removeClass('player2')
     $('#display-winner').text('')
+    $('#main-container').removeClass('main-visibility');
+    $buttonX.removeClass('main-visibility')
+    $buttonO.removeClass('main-visibility')
+    $('h2').remove()
+
+    $buttonO.show()
+    $buttonX.show()
+    $('#reset-button').hide()
+    $('#button-text-display').text('Select one -').show()
+
+
+
     console.log(activePlayer, winner)
 }
 )
+//Bring restat game up on screen after win/loss or draw
+const showPlayAgain = function () {
+
+    if (winner && displayResult) {
+
+        $('#main-container').addClass('main-visibility');
+        $buttonX.addClass('main-visibility')
+        $buttonO.addClass('main-visibility')
+
+        $('<h2>', {
+            // id: "randomId",
+            class: "randomClass",
+            text: `${displayResult.text()}`
+        }).prependTo('body');
+
+        $('.reset-hide').attr('id', 'reset-button-container')
+        $('.reset-hide').removeClass()
+        $buttonO.hide()
+        $buttonX.hide()
+        $('#button-text-display').hide()
+        $('#reset-button').show()
+
+        // $('#reset-button').toggle()
+
+
+    }
+    return
+
+}
+
 
 
 
