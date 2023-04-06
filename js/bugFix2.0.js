@@ -11,8 +11,8 @@ const $box8 = $('#eight');
 const $box9 = $('#nine');
 
 //buttons choice
-const $buttonO = $('#O')
-const $buttonX = $('#X')
+const $buttonO = $('#O');
+const $buttonX = $('#X');
 
 ///////////////////////////////////////////////////////
 
@@ -22,7 +22,7 @@ let activePlayer;
 //switch player
 const switchPlayer = function () {
     activePlayer = activePlayer === "X" ? "O" : "X";
-}
+};
 
 //click events
 const userSelect = function () {
@@ -55,7 +55,7 @@ const userSelect = function () {
         }
     }
     )
-}
+};
 userSelect()
 //winning logic - 8 possible winning combination
 // [123], [456], [789] - Horizontally
@@ -136,7 +136,7 @@ const checkWinner = function () {
         return winner = "O";
 
     }
-    return winner
+    return winner;
 
 }
 
@@ -150,7 +150,7 @@ const displayWinOrDraw = function () {
         displayResult = $('#display-winner').text(`The winner is ${winner}`);
 
     }
-    //draw
+    //if draw
     const boxFilled = $('.box').text()
 
     if (boxFilled.split('').length === 9 && !winner) {
@@ -162,6 +162,33 @@ const displayWinOrDraw = function () {
     return;
 
 };
+
+//Play again button
+$('#reset-button').on('click', function () {
+
+    activePlayer = "";
+    winner = "";
+    $('.box').text('');
+    $('.box').removeClass('player1');
+    $('.box').removeClass('player2');
+    $('#display-winner').text('');
+    $('#main-container').removeClass('main-visibility');
+    $buttonX.removeClass('main-visibility');
+    $buttonO.removeClass('main-visibility');
+    $('h2').remove();
+
+    $buttonO.show();
+    $buttonX.show();
+    $('#reset-button').hide();
+    $('#button-text-display').text('Select one -').show();
+    $('#end-game').hide()
+
+}
+);
+//End game button
+$('#end-game').on('click', function (e) {
+    location.reload();
+})
 
 //Start game page effect
 $('#header-button').on('click', function () {
@@ -201,28 +228,6 @@ if (!activePlayer) {
     })
 };
 
-//Play again button
-$('#reset-button').on('click', function () {
-
-    activePlayer = "";
-    winner = "";
-    $('.box').text('');
-    $('.box').removeClass('player1');
-    $('.box').removeClass('player2');
-    $('#display-winner').text('');
-    $('#main-container').removeClass('main-visibility');
-    $buttonX.removeClass('main-visibility');
-    $buttonO.removeClass('main-visibility');
-    $('h2').remove();
-
-    $buttonO.show();
-    $buttonX.show();
-    $('#reset-button').hide();
-    $('#button-text-display').text('Select one -').show();
-
-}
-);
-
 //Bring restat game up on screen after win/loss or draw
 const showPlayAgain = function () {
 
@@ -233,7 +238,7 @@ const showPlayAgain = function () {
         $buttonO.addClass('main-visibility');
 
         $('<h2>', {
-            id: "randomId",
+            id: "display-result",
             class: "animate__bounce",
             text: `${displayResult.text()}`
         }).prependTo('body');
@@ -243,6 +248,8 @@ const showPlayAgain = function () {
         $buttonX.hide();
         $('#button-text-display').hide();
         $('#reset-button').show();
+        $('#end-game').show()
+
 
     }
 

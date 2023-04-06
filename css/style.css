@@ -162,6 +162,28 @@ body {
 }
 
 /* /////////////////////////////////////////////////////////////////////////////// */
+/* End Game Button */
+#end-game {
+    padding: 10px 20px;
+    margin: 10px;
+    border: 5px solid rgb(109, 104, 104);
+    border-radius: 15px;
+    box-shadow: 0 0 8px 1px black;
+    width: 120px;
+
+}
+
+#end-game:active {
+    color: rgb(231, 162, 162);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#end-game:hover {
+    cursor: pointer;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////// */
 
 @keyframes append-animate {
 	from {
@@ -174,7 +196,7 @@ body {
 	}
 }
 
-#randomId {
+#display-result {
     display: flex;
     justify-content: center;
     color: rgb(212, 42, 20);
