@@ -24,14 +24,14 @@ const switchPlayer = function () {
     activePlayer = activePlayer === "X" ? "O" : "X";
 }
 
-//click div.box
+//click events
 const userSelect = function () {
 
     $('.box').on('click', function () {
 
         if ($(this).text() === "X" || $(this).text() === "O") {
 
-            return;
+            return; //so the user can't click again
         };
 
         if (activePlayer === "X") {
@@ -144,7 +144,7 @@ const checkWinner = function () {
 let displayResult;
 
 const displayWinOrDraw = function () {
-
+    //if win
     if (winner) {
         activePlayer = "";
         displayResult = $('#display-winner').text(`The winner is ${winner}`);
@@ -155,13 +155,13 @@ const displayWinOrDraw = function () {
 
     if (boxFilled.split('').length === 9 && !winner) {
         winner = `DRAW!`;
-        displayResult = $('#display-winner').text(`No win this time, it's a ${winner}`);
+        displayResult = $('#display-winner').text(`It's a ${winner}`);
 
     };
 
     return;
 
-}
+};
 
 //Start game page effect
 $('#header-button').on('click', function () {
@@ -171,7 +171,7 @@ $('#header-button').on('click', function () {
     $('#button-hide').attr('id', 'button-container')
     $('#button-hide').removeAttr('id');
 
-})
+});
 
 // O or X selection after start game page
 if (!activePlayer) {
@@ -185,7 +185,7 @@ if (!activePlayer) {
         $('.main-hide').removeClass();
 
     })
-}
+};
 if (!activePlayer) {
 
     $buttonO.on('click', function () {
@@ -199,8 +199,7 @@ if (!activePlayer) {
         $('.reset-hide').removeClass();
 
     })
-
-}
+};
 
 //Play again button
 $('#reset-button').on('click', function () {
@@ -248,5 +247,4 @@ const showPlayAgain = function () {
     }
 
     return;
-
-}
+};
