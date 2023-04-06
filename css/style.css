@@ -5,8 +5,6 @@ body {
     margin: 20px auto;
     background-color: antiquewhite;
     font-family: 'Rubik Pixels', cursive, sans-serif;
-
-
 }
 
 /* header */
@@ -21,7 +19,6 @@ body {
     justify-content: center;
     margin-top: 250px;
 }
-
 
 #header-container>h1 {
     color: red;
@@ -41,19 +38,15 @@ body {
 
 #header-container>button:active {
     color: rgb(231, 162, 162);
-    /* background-color: #3e8e41; */
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
 #header-container>button:hover {
-    /* box-shadow: 0 0 12px 2px rgb(42, 24, 139); */
     cursor: pointer;
     transition: 0.2s;
-    /* font-size: 20px; */
     transition: 0.2s;
 }
-
 
 /* /////////////////////////////////////////////////////////////////////////////// */
 
@@ -66,10 +59,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
-    margin-bottom: 50px;
+    margin-top: 110px;
+    margin-bottom: 10px;
     margin-right: 50px;
-
 }
 
 #button-container>button {
@@ -83,20 +75,14 @@ body {
 
 #button-container>button:active {
     color: rgb(231, 162, 162);
-    /* background-color: #3e8e41; */
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
 #button-container>button:hover {
-    /* box-shadow: 0 0 12px 2px rgb(42, 24, 139); */
     cursor: pointer;
     transition: 0.1s;
-    font-size: 15px;
-    /* padding: 15px; */
-
 }
-
 
 /* /////////////////////////////////////////////////////////////////////////////// */
 
@@ -104,27 +90,6 @@ body {
 .main-hide {
     display: none;
 }
-
-/* #main-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 10px;
-    background-color: #81b0d9;
-    padding: 10px;
-    width: 441px;
-    height: 400px;
-    margin: 0 auto;
-} 
-.box {
-    width: 140px;
-    height: 70px;
-    background-color: rgba(161, 151, 151, 0.8);
-    text-align: center;
-    padding: 20px 0;
-    /* font-size: 30px; */
-/* justify-self: center; */
-/* border: 1px solid black; */
-
 
 #main-container {
     display: flex;
@@ -138,7 +103,6 @@ body {
     width: 150px;
     height: 150px;
     text-align: center;
-    /* border: 1px solid black; */
 }
 
 #one,
@@ -160,24 +124,16 @@ body {
     border-bottom: 5px dashed white;
 }
 
-
 .main-visibility {
     opacity: 0.12;
 }
 
-
-
-
-
 #reset-button-container {
     color: red;
-    /* margin: 0 auto; */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-
-
 }
 
 #reset-button {
@@ -192,16 +148,12 @@ body {
 
 #reset-button:active {
     color: rgb(231, 162, 162);
-    /* background-color: #3e8e41; */
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
 #reset-button:hover {
-    /* box-shadow: 0 0 12px 2px rgb(42, 24, 139); */
     cursor: pointer;
-    transition: 0.1s;
-
 }
 
 
@@ -209,34 +161,31 @@ body {
     display: none;
 }
 
-
-
-
-
-
-
 /* /////////////////////////////////////////////////////////////////////////////// */
 
-/* .randomClass {
-    display: flex;
-    justify-content: center;
-    color: rgb(212, 42, 20);
-    font-size: 34px;
-    margin-top: 40px;
-    text-align: center;
-
-} */
+@keyframes append-animate {
+	from {
+		transform: scaleY(0);
+		opacity: 0;
+	}
+	to {
+		transform: scaleY(1);
+		opacity: 1;
+	}
+}
 
 #randomId {
     display: flex;
     justify-content: center;
     color: rgb(212, 42, 20);
     font-size: 34px;
-    margin-top: 40px;
+    margin-top: 10px;
     text-align: center;
     transition: 2s;
-}
+    transform-origin: 50% 0;
+	animation: append-animate .3s linear;
 
+}
 
 .player1 {
     color: antiquewhite;
@@ -247,17 +196,11 @@ body {
 }
 
 .player2 {
-    /* color: blue; */
     color: antiquewhite;
-
     background-image: url(../img/O-Jolle_insigna\ \(1\).png);
     background-size: 100px;
     background-repeat: no-repeat;
     background-position: 20px;
-}
-
-.computer {
-    color: yellow;
 }
 
 #display-winner {
