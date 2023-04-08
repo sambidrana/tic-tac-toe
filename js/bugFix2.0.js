@@ -18,7 +18,10 @@ const $buttonX = $('#X');
 
 //active player
 let activePlayer;
-
+let score = {
+    X: 0,
+    O: 0,
+}
 //switch player
 const switchPlayer = function () {
     activePlayer = activePlayer === "X" ? "O" : "X";
@@ -42,6 +45,7 @@ const userSelect = function () {
             checkWinner();
             displayWinOrDraw();
             showPlayAgain();
+            scoreKeeper()
 
         } else if (activePlayer === "O") {
             $(this).addClass('player2');
@@ -51,6 +55,7 @@ const userSelect = function () {
             checkWinner();
             displayWinOrDraw();
             showPlayAgain();
+            scoreKeeper()
 
         }
     }
@@ -147,7 +152,7 @@ const displayWinOrDraw = function () {
     //if win
     if (winner) {
         activePlayer = "";
-        displayResult = $('#display-winner').text(`The winner is ${winner}`);
+        displayResult = $('#display-result').text(`The winner is ${winner}`);
 
     }
     //if draw
@@ -155,7 +160,7 @@ const displayWinOrDraw = function () {
 
     if (boxFilled.split('').length === 9 && !winner) {
         winner = `DRAW!`;
-        displayResult = $('#display-winner').text(`It's a ${winner}`);
+        displayResult = $('#display-result').text(`Its a ${winner}`);
 
     };
 
@@ -171,24 +176,39 @@ $('#reset-button').on('click', function () {
     $('.box').text('');
     $('.box').removeClass('player1');
     $('.box').removeClass('player2');
-    $('#display-winner').text('');
+    $('#display-result').text('');
+
+    
     $('#main-container').removeClass('main-visibility');
     $buttonX.removeClass('main-visibility');
     $buttonO.removeClass('main-visibility');
-    $('h2').remove();
 
     $buttonO.show();
     $buttonX.show();
     $('#reset-button').hide();
-    $('#button-text-display').text('Select one -').show();
+    $('#button-text-display').text('Choose who goes first now? ').show();
     $('#end-game').hide()
 
 }
 );
+
 //End game button
 $('#end-game').on('click', function (e) {
     location.reload();
 })
+
+//Score Keeper 
+const scoreKeeper = function () {
+
+    if(winner === "X") {
+        score.X +=1;
+        $('#score-X p').text(`${score.X}`)
+    } else if (winner === "O") {
+        score.O +=1;
+        $('#score-O p').text(`${score.O}`)
+    }
+
+}
 
 //Start game page effect
 $('#header-button').on('click', function () {
@@ -210,6 +230,7 @@ if (!activePlayer) {
         $('#button-text-display').text(`You selected -`);
         $('.main-hide').attr('id', 'main-container');
         $('.main-hide').removeClass();
+        $('.scoreX-hide, .scoreO-hide').removeClass()
 
     })
 };
@@ -224,6 +245,7 @@ if (!activePlayer) {
         $('.main-hide').removeClass();
         $('.reset-hide').attr('id', 'reset-button-container');
         $('.reset-hide').removeClass();
+        $('.scoreX-hide, .scoreO-hide').removeClass()
 
     })
 };
@@ -237,19 +259,15 @@ const showPlayAgain = function () {
         $buttonX.addClass('main-visibility');
         $buttonO.addClass('main-visibility');
 
-        $('<h2>', {
-            id: "display-result",
-            class: "animate__bounce",
-            text: `${displayResult.text()}`
-        }).prependTo('body');
+        $('#display-result').text(`${displayResult.text()}`)
+        $('#display-result').attr('id', 'display-result') //
         $('.reset-hide').attr('id', 'reset-button-container')
-        $('.reset-hide').removeClass();
+        $('.reset-hide').removeClass(`${displayResult.text()}`);
         $buttonO.hide();
         $buttonX.hide();
         $('#button-text-display').hide();
         $('#reset-button').show();
         $('#end-game').show()
-
 
     }
 

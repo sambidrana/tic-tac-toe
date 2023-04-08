@@ -185,6 +185,48 @@ body {
 
 /* /////////////////////////////////////////////////////////////////////////////// */
 
+#scorekeeper {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    opacity: 0.5;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+
+}
+.scoreX-hide {
+    display: none;
+}
+
+.scoreO-hide {
+    display: none;
+}
+
+#score-X {
+    color: red;
+   
+}
+#score-O {
+   color: rgb(40, 117, 190);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* /////////////////////////////////////////////////////////////////////////////// */
+
+
+
 @keyframes append-animate {
 	from {
 		transform: scaleY(0);
@@ -199,14 +241,17 @@ body {
 #display-result {
     display: flex;
     justify-content: center;
-    color: rgb(212, 42, 20);
-    font-size: 34px;
+    color: white;
+    font-size: 44px;
     margin-top: 10px;
     text-align: center;
-    transition: 2s;
-    transform-origin: 50% 0;
+    /* transition: 2s; */
+    /* transform-origin: 50% 0; */
 	animation: append-animate .3s linear;
 
+}
+#display-winner {
+    display: none;
 }
 
 .player1 {
@@ -225,6 +270,3 @@ body {
     background-position: 20px;
 }
 
-#display-winner {
-    display: none;
-}
