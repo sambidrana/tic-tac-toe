@@ -5,7 +5,6 @@ body {
     margin: 20px auto;
     background-color: antiquewhite;
     font-family: 'Rubik Pixels', cursive, sans-serif;
-
 }
 
 /* header */
@@ -28,7 +27,6 @@ body {
     border-radius: 20px;
     padding: 5px;
     text-shadow: 1px 1px 5px black;
-
 }
 
 #header-container>button {
@@ -49,7 +47,6 @@ body {
     cursor: pointer;
     transition: 0.2s;
     color: rgb(231, 162, 162);
-
 }
 
 /* /////////////////////////////////////////////////////////////////////////////// */
@@ -62,6 +59,7 @@ body {
     font-size: 28px;
     text-shadow: 2px 2px 5px rgb(129, 113, 113);
 }
+
 #button-container {
     display: flex;
     justify-content: center;
@@ -69,7 +67,6 @@ body {
     margin-top: 90px;
     margin-bottom: 10px;
 }
-
 
 #button-container>button {
     padding: 10px 20px;
@@ -79,7 +76,6 @@ body {
     box-shadow: 0 0 8px 1px black;
     width: 100px;
     font-weight: 900;
-
 }
 
 #button-container>button:active {
@@ -90,16 +86,16 @@ body {
 #button-container>button:hover {
     cursor: pointer;
     transition: 0.2s;
-    /* color: rgb(231, 162, 162); */
-
 }
+
 #X:hover {
     color: red;
 }
+
 #O:hover {
     color: rgb(40, 120, 225);
-
 }
+
 /* /////////////////////////////////////////////////////////////////////////////// */
 
 /* main container */
@@ -128,7 +124,6 @@ body {
 #seven,
 #eight {
     border-right: 5px dashed white;
-
 }
 
 #one,
@@ -163,7 +158,6 @@ body {
     border-radius: 15px;
     box-shadow: 0 0 8px 1px black;
     width: 120px;
-
 }
 
 #reset-button:active {
@@ -176,16 +170,16 @@ body {
     cursor: pointer;
     transition: 0.2s;
     color: rgb(231, 162, 162);
-
 }
-
 
 .reset-hide {
     display: none;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////// */
+
 /* End Game Button */
+
 #end-game {
     padding: 10px 20px;
     margin: 10px;
@@ -193,7 +187,6 @@ body {
     border-radius: 15px;
     box-shadow: 0 0 8px 1px black;
     width: 120px;
-
 }
 
 #end-game:active {
@@ -207,7 +200,6 @@ body {
     color: rgb(231, 162, 162);
 }
 
-
 /* /////////////////////////////////////////////////////////////////////////////// */
 
 #scorekeeper {
@@ -218,8 +210,8 @@ body {
     padding: 10px;
     margin: 10px;
     text-align: center;
-
 }
+
 .scoreX-hide {
     display: none;
 }
@@ -232,33 +224,15 @@ body {
     color: red;
     text-shadow: 1px 1px 2px black;
     letter-spacing: 2px;
-
-
-   
 }
+
 #score-O {
    color: rgb(40, 117, 190);
    text-shadow: 1px 1px 2px black;
    letter-spacing: 2px;
-
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* /////////////////////////////////////////////////////////////////////////////// */
-
-
 
 @keyframes append-animate {
 	from {
@@ -283,8 +257,8 @@ body {
     margin-top: 10px;
     text-align: center;
 	animation: append-animate .3s linear;
-
 }
+
 #display-winner {
     display: none;
 }
@@ -295,7 +269,6 @@ body {
     background-size: 100px;
     background-repeat: no-repeat;
     background-position: 20px;
-
 }
 
 .player2 {
@@ -304,6 +277,5 @@ body {
     background-size: 95px;
     background-repeat: no-repeat;
     background-position: 20px;
-
 }
 
